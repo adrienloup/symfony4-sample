@@ -51,3 +51,13 @@ nav ul li a {
   font-size: 26px;
   color: #2d2d2d;
 }
+
+.jewelry {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.jewels {
+  width: calc(100% /4);
+}
