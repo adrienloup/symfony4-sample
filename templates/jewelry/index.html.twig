@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block title %}jewelry{% endblock %}
 {% block body %}
-<h1>jewelry</h1>
-<div class="jewelry">
-  {% for jewels in jewelry %}
-  <div class="jewels">
-    <h2><a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
-    <strong>{{ jewels.formattedPrice }} €</strong>
-    <span>ref {{ jewels.reference }}</span>
-    <span>{{ jewels.category }}</span>
-    <p>{{ jewels.description }}</p>
+<main>
+  <h1>jewelry</h1>
+  <div class="jewelry">
+    {% for jewels in jewelry %}
+    <div class="jewels">
+      <h2><a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
+      <strong>{{ jewels.formattedPrice }} €</strong>
+      <span>ref {{ jewels.reference }}</span>
+      <span>{{ jewels.category }}</span>
+      <p>{{ jewels.description }}</p>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+</main>
 {% endblock %}

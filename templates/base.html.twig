@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}jewelry{% endblock %}</title>
         <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
         {% block stylesheets %}{% endblock %}
     </head>
@@ -17,5 +17,6 @@
         {% block javascripts %}
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
+        {# <a href="{{ path('admin') }}" id="admin"></a> #}
     </body>
 </html>

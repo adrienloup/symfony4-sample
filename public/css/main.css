@@ -31,6 +31,11 @@ body {
   letter-spacing: 1px;
 }
 
+main {
+  padding: 40px;
+  text-align: center;
+}
+
 nav ul {
   width: 100%;
   font-size: 0;
@@ -52,14 +57,20 @@ nav ul li a {
   color: #2d2d2d;
 }
 
+nav ul li a:hover {
+  background: #2d2d2d;
+  color: #fff;
+}
+
 .jewelry {
   max-width: 900px;
   width: 100%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 .jewels {
   width: calc(100% /4);
+  text-align: left;
 }
 
 .jewels strong {
@@ -68,4 +79,15 @@ nav ul li a {
 
 .jewels span {
   display: block;
+}
+
+#admin {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background: red;
+  transform: rotate(45deg) translate(0px,-90px);
 }
