@@ -7,16 +7,18 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="{{ path('home') }}">home</a></li>
-                <li><a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a></li>
-            </ul>
-        </nav>
+        <header>
+            <nav>
+                <a href="{{ path('home') }}">home</a>
+                <li><a href="{{ path('men') }}" class="{% if active_menu is defined and active_menu == 'men' %}active{% endif %}">Men</a></li>
+                <a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
         {# <a href="{{ path('admin') }}" id="admin"></a> #}
+        <a href="#" id="admin"></a>
     </body>
 </html>

@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title jewelry.name %}
 {% block body %}
-<div>
-  {{ jewelry.name }}
-</div>
+<main>
+  <h1>{{ jewelry.name }}</h1>
+  <div class="jewelry">
+    <strong>{{ jewelry.formattedPrice }} €</strong>
+    <span>ref {{ jewelry.reference }}</span>
+    <span>{{ jewelry.category }}</span>
+    <p>{{ jewelry.description }}</p>
+  </div>
+</main>
 {% endblock %}
