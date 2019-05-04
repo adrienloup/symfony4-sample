@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ path('home') }}">home</a></li>
+                <li><a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a></li>
+            </ul>
+        </nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

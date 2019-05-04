@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'FTN45__W';
+  src: url('../fonts/FTN45__W.woff2') format('woff2'),
+    url('../fonts/FTN45__W.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FTN75__W';
+  src: url('../fonts/FTN75__W.woff2') format('woff2'),
+    url('../fonts/FTN75__W.woff') format('woff');
+}
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+	font: 18px/1.2 'FTN45__W', sans-serif;
+	font-weight: normal;
+  color: #2d2d2d;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  width: 100%;
+  font-size: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'FTN75__W', sans-serif;
+  font-size: 26px;
+  color: #2d2d2d;
+}
