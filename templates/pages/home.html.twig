@@ -9,9 +9,7 @@
   {% for jewels in jewelry %}
   <div>
     <a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a>
-    ref {{ jewels.reference }}
-    ${{ jewels.formattedPrice }}
-    {{ jewels.description }}
+    {{ jewels.formattedPrice }} €
   </div>
   {% endfor %}
 </div>
