@@ -5,9 +5,10 @@
 <div class="jewelry">
   {% for jewels in jewelry %}
   <div class="jewels">
-    <a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a>
+    <h2><a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
     <strong>{{ jewels.formattedPrice }} €</strong>
     <span>ref {{ jewels.reference }}</span>
+    <span>{{ jewels.category }}</span>
     <p>{{ jewels.description }}</p>
   </div>
   {% endfor %}

@@ -61,3 +61,11 @@ nav ul li a {
 .jewels {
   width: calc(100% /4);
 }
+
+.jewels strong {
+  display: block;
+}
+
+.jewels span {
+  display: block;
+}
