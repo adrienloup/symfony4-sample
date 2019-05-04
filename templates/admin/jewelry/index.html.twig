@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}home{% endblock %}
+
+{% block body %}
+<div>
+  <h1>gérer les  liens</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for jewels in jewelry %}
+      <tr>
+        <td>{{ jewels.name }}</a>
+        <td>
+          <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}">Editer</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

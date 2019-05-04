@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}home{% endblock %}
+{% block body %}
+<div>
+  home
+</div>
+<div>
+  lastest
+  {% for jewels in jewelry %}
+  <div>
+    <a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a>
+    {{ jewels.formattedPrice }} €
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
