@@ -43,6 +43,21 @@ class JewelryRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Jewelry[]
+     */
+    public function findByCategory($value): array
+    {
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.category = :val')
+            ->setParameter('val', $value)
+            ->orderBy('j.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     private function findAllQuery(): QueryBuilder
     {
         return $this->createQueryBuilder('j')

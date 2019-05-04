@@ -30,11 +30,17 @@ class JewelryController extends AbstractController
 
   /**
    * @Route("/jewelry", name="jewelry.index")
+   * @param JewelryRepository $repository
    * @return Response
    */
-  public function index(): Response
+  public function index(JewelryRepository $repository): Response
   {
+    // $jewelry = $repository->findLatest();
+    $jewelry = $repository->findByCategory('jewelry');
+    //$jewelry = $this->repository->findOneBy(['category' => 'watch']);
+    //dump($jewelry);
     return $this->render('jewelry/index.html.twig', [
+      'jewelry' => $jewelry,
       'active_menu' => 'jewelry'
     ]);
   }
