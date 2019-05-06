@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+  {{ form_row(form.name) }}
+  {{ form_row(form.description) }}
+  {{ form_row(form.reference) }}
+  {{ form_row(form.price) }}
+  {{ form_row(form.category) }}
+  {{ form_row(form.sale) }}
+  {{ form_widget(form) }}
+  <button class="button">{{ button|default('submit') }}</button>
+{{ form_end(form) }}

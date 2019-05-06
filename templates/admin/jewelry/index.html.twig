@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}home{% endblock %}
+{% block title %}Manage (Admin){% endblock %}
 
 {% block body %}
-<div>
-  <h1>gérer les  liens</h1>
+<div class="admin">
+  <h1>Manage all jewels</h1>
+  <div>Or add a new jewel to the collection <a href="{{ path('admin.jewelry.new') }}" class="button">Add new</a></div>
+  <strong>List of jewels</strong>
   <table>
-    <thead>
-      <tr>
-        <th>title</th>
-        <th>action</th>
-      </tr>
-    </thead>
     <tbody>
       {% for jewels in jewelry %}
       <tr>
         <td>{{ jewels.name }}</a>
         <td>
-          <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}">Editer</a>
+          <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}" class="button">Edit</a>
+          <form action="{{ path('admin.jewelry.delete', {id: jewels.id}) }}">
+            <input type="hidden" name="_method" vlaue="DELETE">
+            <button class="button">Delete</button>
+          </form>
         </td>
       </tr>
       {% endfor %}
