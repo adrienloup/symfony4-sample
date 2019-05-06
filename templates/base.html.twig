@@ -2,23 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}jewelry{% endblock %}</title>
+        <title>{% block title %}Jewelry{% endblock %}</title>
         <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         <header>
             <nav>
-                <a href="{{ path('home') }}">home</a>
-                <li><a href="{{ path('men') }}" class="{% if active_menu is defined and active_menu == 'men' %}active{% endif %}">Men</a></li>
+                <a href="{{ path('home') }}" class="{% if active_menu is defined and active_menu == 'home' %}active{% endif %}">home</a>
                 <a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a>
+                <a href="{{ path('rings') }}" class="{% if active_menu is defined and active_menu == 'rings' %}active{% endif %}">Rings</a>
             </nav>
         </header>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
-        {# <a href="{{ path('admin') }}" id="admin"></a> #}
-        <a href="#" id="admin"></a>
+        <a href="{{ path('admin.jewelry.index') }}" id="admin"></a>
     </body>
 </html>
