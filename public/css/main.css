@@ -107,7 +107,7 @@ button.button {
 }
 
 .admin {
-  max-width: 590px;
+  max-width: 560px;
   width: calc(100% - 80px);
   margin: 0 auto;
   padding: 40px;
@@ -127,12 +127,20 @@ button.button {
 
 .admin table { width: 100% }
 
-.admin table tr td:nth-child(2) { text-align: right }
+.admin table tr td:nth-child(2) {
+  text-align: right;
+  font-size: 0;
+}
 
-.admin table .button {
+.admin table .button,
+.admin table button.button {
   display: inline-block;
   vertical-align: top;
+  padding: 10px 20px;
+  margin: 1px;
   font-size: 12px;
+  background: #efefef;
+  color: inherit;
 }
 
 .admin table form {
