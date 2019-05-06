@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class JewelryController extends AbstractController
 {
-
   /**
    * @var JewelryRepository
    */
@@ -63,5 +62,4 @@ class JewelryController extends AbstractController
       'active_menu' => 'jewelry'
     ]);
   }
-
 }

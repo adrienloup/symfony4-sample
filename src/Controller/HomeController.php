@@ -9,7 +9,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-
   /**
    * @Route("/", name="home")
    * @param JewelryRepository $repository
@@ -19,8 +18,8 @@ class HomeController extends AbstractController
   {
     $jewelry = $repository->findLatest();
     return $this->render('pages/home.html.twig', [
-      'jewelry' => $jewelry
+      'jewelry' => $jewelry,
+      'active_menu' => 'home'
     ]);
   }
-
 }

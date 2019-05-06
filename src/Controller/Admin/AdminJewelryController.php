@@ -2,39 +2,97 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Jewelry;
 use App\Repository\JewelryRepository;
+use App\Form\JewelryType;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminJewelryController extends AbstractController
 {
-
   /**
    * @var JewelryRepository
    */
   private $repository;
 
-  public function __construct(JewelryRepository $repository)
+  /**
+   * @var ObjectManager
+   */
+  private $em;
+
+  public function __construct(JewelryRepository $repository, ObjectManager $em)
   {
     $this->repository = $repository;
+    $this->em = $em;
   }
 
   /**
    * @Route("/admin", name="admin.jewelry.index")
-   * @return \Symfony\Component\HttpFoundation\Response
+   * @return Response
    */
   public function index()
   {
-    $jewelry = $this->repository->finAll();
+    // $jewelry = $repository->finAll();
+    $jewelry = $this->repository->findAll();
     return $this->render('admin/jewelry/index.html.twig', compact('jewelry'));
   }
 
   /**
-   * @Route("/admin/{id}", name="admin.jewelry.edit")
+   * @Route("/admin/jewelry/new", name="admin.jewelry.new")
+   * @return Response
    */
-  public function edit(JewelryRepository $repository)
+  public function new(Request $request)
   {
-    return $this->render('admin/jewelry/edit.html.twig', compact('jewelry'));
+    $jewelry = new Jewelry();
+    $form = $this->createForm(JewelryType::class, $jewelry);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      $this->em->persist($jewelry);
+      $this->em->flush();
+      return $this->redirectToRoute('admin.jewelry.index');
+    }
+
+    return $this->render('admin/jewelry/new.html.twig', [
+      'jewelry' => $jewelry,
+      'form' => $form->createView()
+    ]);
   }
 
+  /**
+   * @Route("/admin/jewelry/{id}", name="admin.jewelry.edit", methods="GET|POST")
+   * @param Jewelry $jewelry
+   * @return Response
+   */
+  public function edit(Jewelry $jewelry, Request $request)
+  {
+    $form = $this->createForm(JewelryType::class, $jewelry);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      $this->em->flush();
+      return $this->redirectToRoute('admin.jewelry.index');
+    }
+
+    return $this->render('admin/jewelry/edit.html.twig', [
+      'jewelry' => $jewelry,
+      'form' => $form->createView()
+    ]);
+  }
+
+  /**
+   * @Route("/admin/jewelry/{id}", name="admin.jewelry.delete", methods="DELETE")
+   * @param Jewelry $jewelry
+   * @return Response
+   */
+  public function delete(Jewelry $jewelry)
+  {
+    // $this->em->remove($jewelry);
+    // $this->em->flush();
+    return new Response('Suppression');
+    return $this->redirectToRoute('admin.jewelry.index');
+  }
 }
