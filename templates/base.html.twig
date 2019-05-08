@@ -10,6 +10,7 @@
         <header>
             <nav>
                 <a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a>
+                <a href="{{ path('client.necklaces.index') }}" class="{% if active_menu is defined and active_menu == 'necklaces' %}active{% endif %}">Necklaces</a>
                 <a href="{{ path('client.earrings.index') }}" class="{% if active_menu is defined and active_menu == 'earrings' %}active{% endif %}">earrings</a>
                 <a href="{{ path('client.rings.index') }}" class="{% if active_menu is defined and active_menu == 'rings' %}active{% endif %}">Rings</a>
             </nav>
