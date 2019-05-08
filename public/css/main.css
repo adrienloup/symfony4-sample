@@ -123,7 +123,10 @@ button.button {
   text-align: center;
 }
 
-.admin strong { display: block }
+.admin strong {
+  display: block;
+  margin-bottom: 10px;
+}
 
 .admin table { width: 100% }
 

@@ -88,11 +88,12 @@ class AdminJewelryController extends AbstractController
    * @param Jewelry $jewelry
    * @return Response
    */
-  public function delete(Jewelry $jewelry)
+  public function delete(Jewelry $jewelry, Request $request)
   {
-    // $this->em->remove($jewelry);
-    // $this->em->flush();
-    return new Response('Suppression');
+    if ($this->isCsrfTokenValid('delete' . $jewelry->getId(), $request->get('_token'))) {
+      $this->em->remove($jewelry);
+      $this->em->flush();
+    }
     return $this->redirectToRoute('admin.jewelry.index');
   }
 }
