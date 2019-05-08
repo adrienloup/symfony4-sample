@@ -52,17 +52,22 @@ nav a {
   text-transform: uppercase;
   font-family: 'FTN75__W', sans-serif;
   font-size: 26px;
-  color: #2d2d2d;
+  background: #2d2d2d;
+  color: #fff;
 }
 
 nav a.active {
-  background: #d01345;
-  color: #fff;
+  background: #fff;
+  color: #2d2d2d;
 }
 
 nav a:hover {
-  background: #2d2d2d;
-  color: #fff;
+  background: #d01345;
+}
+
+nav a.active:hover {
+  background: inherit;
+  color: inherit;
 }
 
 .button {

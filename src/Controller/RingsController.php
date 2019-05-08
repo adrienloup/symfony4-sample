@@ -20,14 +20,13 @@ class RingsController extends AbstractController
   }
 
   /**
-   * @Route("/jewelry/rings", name="rings")
+   * @Route("/jewelry/rings", name="client.rings.index")
    * @return Response
    */
   public function index(): Response
   {
     $repository = $this->repository->findAll();
-    dump($repository);
-    return $this->render('pages/rings.html.twig', [
+    return $this->render('client/rings/index.html.twig', [
       'active_menu' => 'rings'
     ]);
   }

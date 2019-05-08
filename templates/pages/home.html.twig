@@ -2,12 +2,19 @@
 {% block title %}lastest{% endblock %}
 {% block body %}
 <main>
-  <h1>lastest</h1>
   <div class="jewelry">
-    {% for jewels in jewelry %}
-    <div class="jewels">
-      <h2><a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
-      <strong>{{ jewels.formattedPrice }} €</strong>
+    <h1>lastest</h1>
+    {% for jewel in jewelry %}
+    <div class="jewel">
+      <h2><a href="{{ path('jewelry.single', { id: jewel.id, slug: jewel.slug }) }}">{{ jewel.name }}</a></h2>
+      <strong>{{ jewel.formattedPrice }} €</strong>
+    </div>
+    {% endfor %}
+    <h1>All</h1>
+    {% for jewel in jewelry2 %}
+    <div class="jewel">
+      <h2><a href="{{ path('jewelry.single', { id: jewel.id, slug: jewel.slug }) }}">{{ jewel.name }}</a></h2>
+      <strong>{{ jewel.formattedPrice }} €</strong>
     </div>
     {% endfor %}
   </div>

@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class JewelryController extends AbstractController
+class EarringsController extends AbstractController
 {
   /**
    * @var JewelryRepository
@@ -28,41 +28,35 @@ class JewelryController extends AbstractController
   }
 
   /**
-   * @Route("/", name="jewelry.index")
+   * @Route("/jewelry/earrings", name="client.earrings.index")
    * @param JewelryRepository $repository
    * @return Response
    */
   public function index(JewelryRepository $repository): Response
   {
-    // $jewelry = $repository->findLatest();
-    $lastest = $repository->findLatest();
-    $all = $repository->findAll();
-    // $jewelry = $repository->findByCategory('jewelry');
-    //$jewelry = $this->repository->findOneBy(['category' => 'watch']);
-    //dump($jewelry);
-    return $this->render('jewelry/index.html.twig', [
-      'lastest' => $lastest,
-      'all' => $all,
-      'active_menu' => 'jewelry'
+    $jewelry = $repository->findAll();
+    return $this->render('client/earrings/index.html.twig', [
+      'jewelry' => $jewelry,
+      'active_menu' => 'earrings'
     ]);
   }
 
   /**
-   * @Route("/jewelry/{slug}-{id}", name="jewelry.single", requirements={"slug": "[a-z0-9\-]*"})
+   * @Route("/jewelry/earrings/{slug}-{id}", name="client.earrings.single", requirements={"slug": "[a-z0-9\-]*"})
    * @param Jewelry $jewelry
    * @return Response
    */
   public function single(Jewelry $jewelry, string $slug): Response
   {
     if ($jewelry->getSlug() !== $slug ) {
-      return $this->redirectToRoute('jewelry.single', [
+      return $this->redirectToRoute('client.earrings.single', [
         'id' => $jewelry->getId(),
         'slug' => $jewelry->getSlug()
       ], 301);
     }
-    return $this->render('jewelry/single.html.twig', [
+    return $this->render('client/earrings/single.html.twig', [
       'jewelry' => $jewelry,
-      'active_menu' => 'jewelry'
+      'active_menu' => 'earrings'
     ]);
   }
 }

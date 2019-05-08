@@ -4,13 +4,18 @@
 <main>
   <h1>Jewelry</h1>
   <div class="jewelry">
-    {% for jewels in jewelry %}
-    <div class="jewels">
-      <h2><a href="{{ path('jewelry.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
-      <strong>{{ jewels.formattedPrice }} €</strong>
-      <span>ref {{ jewels.reference }}</span>
-      <span>{{ jewels.category }}</span>
-      <p>{{ jewels.description }}</p>
+    <h1>lastest</h1>
+    {% for jewel in lastest %}
+    <div class="jewel">
+      <h2><a href="{{ path('jewelry.single', { id: jewel.id, slug: jewel.slug }) }}">{{ jewel.name }}</a></h2>
+      <strong>{{ jewel.formattedPrice }} €</strong>
+    </div>
+    {% endfor %}
+    <h1>All</h1>
+    {% for jewel in all %}
+    <div class="jewel">
+      <h2><a href="{{ path('jewelry.single', { id: jewel.id, slug: jewel.slug }) }}">{{ jewel.name }}</a></h2>
+      <strong>{{ jewel.formattedPrice }} €</strong>
     </div>
     {% endfor %}
   </div>

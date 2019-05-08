@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Earrings and pendants (Jewelry){% endblock %}
+{% block body %}
+<main>
+  <h1>Earrings and pendants</h1>
+  <div class="jewelry">
+    {% for jewels in jewelry %}
+    <div class="jewels">
+      <h2><a href="{{ path('client.earrings.single', { id: jewels.id, slug: jewels.slug }) }}">{{ jewels.name }}</a></h2>
+      <strong>{{ jewels.formattedPrice }} €</strong>
+      <span>ref {{ jewels.reference }}</span>
+      <span>{{ jewels.category }}</span>
+      <p>{{ jewels.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

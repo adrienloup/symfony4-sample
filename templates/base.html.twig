@@ -9,9 +9,9 @@
     <body>
         <header>
             <nav>
-                <a href="{{ path('home') }}" class="{% if active_menu is defined and active_menu == 'home' %}active{% endif %}">home</a>
                 <a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a>
-                <a href="{{ path('rings') }}" class="{% if active_menu is defined and active_menu == 'rings' %}active{% endif %}">Rings</a>
+                <a href="{{ path('client.earrings.index') }}" class="{% if active_menu is defined and active_menu == 'earrings' %}active{% endif %}">earrings</a>
+                <a href="{{ path('client.rings.index') }}" class="{% if active_menu is defined and active_menu == 'rings' %}active{% endif %}">Rings</a>
             </nav>
         </header>
         {% block body %}{% endblock %}
