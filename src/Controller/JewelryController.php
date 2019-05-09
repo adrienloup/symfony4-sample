@@ -37,30 +37,39 @@ class JewelryController extends AbstractController
     // $jewelry = $repository->findLatest();
     $lastest = $repository->findLatest();
     $all = $repository->findAll();
+    $sale = $repository->findBySale();
+    $necklaces = $repository->findByCategory('necklaces');
+    $earrings = $repository->findByCategory('earrings');
+    $bracelets = $repository->findByCategory('bracelets');
+
     // $jewelry = $repository->findByCategory('jewelry');
     //$jewelry = $this->repository->findOneBy(['category' => 'watch']);
     //dump($jewelry);
-    return $this->render('jewelry/index.html.twig', [
+    return $this->render('client/jewelry/index.html.twig', [
       'lastest' => $lastest,
       'all' => $all,
+      'sale' => $sale,
+      'necklaces' => $necklaces,
+      'earrings' => $earrings,
+      'bracelets' => $bracelets,
       'active_menu' => 'jewelry'
     ]);
   }
 
   /**
-   * @Route("/jewelry/{slug}-{id}", name="jewelry.single", requirements={"slug": "[a-z0-9\-]*"})
+   * @Route("/jewelry/{slug}-{id}", name="client.jewelry.single", requirements={"slug": "[a-z0-9\-]*"})
    * @param Jewelry $jewelry
    * @return Response
    */
   public function single(Jewelry $jewelry, string $slug): Response
   {
     if ($jewelry->getSlug() !== $slug ) {
-      return $this->redirectToRoute('jewelry.single', [
+      return $this->redirectToRoute('client.jewelry.single', [
         'id' => $jewelry->getId(),
         'slug' => $jewelry->getSlug()
       ], 301);
     }
-    return $this->render('jewelry/single.html.twig', [
+    return $this->render('client/jewelry/single.html.twig', [
       'jewelry' => $jewelry,
       'active_menu' => 'jewelry'
     ]);

@@ -34,27 +34,27 @@ class NecklacesController extends AbstractController
    */
   public function index(JewelryRepository $repository): Response
   {
-    $all = $repository->findAll();
+    $necklaces = $repository->findByCategory('necklaces');
     return $this->render('client/necklaces/index.html.twig', [
-      'all' => $all,
+      'necklaces' => $necklaces,
       'active_menu' => 'necklaces'
     ]);
   }
 
   /**
-   * @Route("/jewelry/necklaces/{slug}-{id}", name="client.necklaces.single", requirements={"slug": "[a-z0-9\-]*"})
+   * @Route("/jewelry/necklaces/{slug}-{id}", name="client.jewelry.index", requirements={"slug": "[a-z0-9\-]*"})
    * @param Jewelry $jewelry
    * @return Response
    */
   public function single(Jewelry $jewelry, string $slug): Response
   {
     if ($jewelry->getSlug() !== $slug ) {
-      return $this->redirectToRoute('client.necklaces.single', [
+      return $this->redirectToRoute('client.jewelry.index', [
         'id' => $jewelry->getId(),
         'slug' => $jewelry->getSlug()
       ], 301);
     }
-    return $this->render('client/necklaces/single.html.twig', [
+    return $this->render('client/jewelry/index.html.twig', [
       'jewelry' => $jewelry,
       'active_menu' => 'necklaces'
     ]);

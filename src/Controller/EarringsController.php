@@ -34,9 +34,9 @@ class EarringsController extends AbstractController
    */
   public function index(JewelryRepository $repository): Response
   {
-    $jewelry = $repository->findAll();
+    $earrings = $repository->findByCategory('earrings');
     return $this->render('client/earrings/index.html.twig', [
-      'jewelry' => $jewelry,
+      'earrings' => $earrings,
       'active_menu' => 'earrings'
     ]);
   }

@@ -53,6 +53,7 @@ class AdminJewelryController extends AbstractController
     if ($form->isSubmitted() && $form->isValid()) {
       $this->em->persist($jewelry);
       $this->em->flush();
+      $this->addFlash('success', 'Your ad is good');
       return $this->redirectToRoute('admin.jewelry.index');
     }
 
@@ -74,6 +75,7 @@ class AdminJewelryController extends AbstractController
 
     if ($form->isSubmitted() && $form->isValid()) {
       $this->em->flush();
+      $this->addFlash('success', 'Your change is good');
       return $this->redirectToRoute('admin.jewelry.index');
     }
 
@@ -93,6 +95,7 @@ class AdminJewelryController extends AbstractController
     if ($this->isCsrfTokenValid('delete' . $jewelry->getId(), $request->get('_token'))) {
       $this->em->remove($jewelry);
       $this->em->flush();
+      $this->addFlash('success', 'Your removal is good');
     }
     return $this->redirectToRoute('admin.jewelry.index');
   }
