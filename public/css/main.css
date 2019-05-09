@@ -40,9 +40,35 @@ a { text-decoration: none }
 
 .title span { font-size: 20px }
 
+.message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #00aa5b;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  font-family: 'FTN75__W';
+  font-size: 16px;
+  color: #fff;
+  transform: translateX(100%) translateZ(0);
+  animation-name: message;
+  animation-timing-function: cubic-bezier(0.22, 0.44, 0, 1);
+  animation-duration: 2.5s;
+  animation-delay: .5s;
+}
+
+@keyframes message {
+  0% { transform: translateX(100%) translateZ(0) }
+  20% { transform: translateX(0%) translateZ(0) }
+  80% { transform: translateX(0%) translateZ(0) }
+  100% { transform: translateX(100%) translateZ(0) }
+}
+
 main {
   padding: 50px 30px;
   overflow: hidden;
+  position: relative;
 }
 
 nav {
@@ -163,6 +189,8 @@ button.button {
   width: calc(100% - 80px);
   margin: 0 auto;
   padding: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .admin h1 {

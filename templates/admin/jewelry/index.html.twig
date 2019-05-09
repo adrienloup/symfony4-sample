@@ -3,29 +3,31 @@
 {% block title %}Manage (Admin){% endblock %}
 
 {% block body %}
-<div class="admin">
-  <h1>Manage all jewels</h1>
-  <div>Or add a new jewel to the collection <a href="{{ path('admin.jewelry.new') }}" class="button">Add new</a></div>
-  <strong>List of jewels</strong>
-  <table>
-    <tbody>
-      {% for jewels in jewelry %}
-      <tr>
-        <td>{{ jewels.name }}</a>
-        <td>
-          <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}" class="button">Edit</a>
-          <form method="post" action="{{ path('admin.jewelry.delete', {id: jewels.id}) }}" onsubmit="return confirm('Are you sure?')">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ jewels.id) }}">
-            <button class="button">Delete</button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<main>
+  <div class="admin">
+    <h1>Manage all jewels</h1>
+    <div>Or add a new jewel to the collection <a href="{{ path('admin.jewelry.new') }}" class="button">Add new</a></div>
+    <strong>List of jewels</strong>
+    <table>
+      <tbody>
+        {% for jewels in jewelry %}
+        <tr>
+          <td>{{ jewels.name }}</a>
+          <td>
+            <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}" class="button">Edit</a>
+            <form method="post" action="{{ path('admin.jewelry.delete', {id: jewels.id}) }}" onsubmit="return confirm('Are you sure?')">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ jewels.id) }}">
+              <button class="button">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
   {% for message in app.flashes('success') %}
   <div class="message">{{ message }}</div>
   {% endfor %}
-</div>
+</main>
 {% endblock %}
