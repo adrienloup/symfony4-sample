@@ -14,11 +14,7 @@
         <td>{{ jewels.name }}</a>
         <td>
           <a href="{{ path('admin.jewelry.edit', {id: jewels.id}) }}" class="button">Edit</a>
-          <form
-            method="post"
-            action="{{ path('admin.jewelry.delete', {id: jewels.id}) }}"
-            onsubmit="return confirm('Are you sure?')"
-          >
+          <form method="post" action="{{ path('admin.jewelry.delete', {id: jewels.id}) }}" onsubmit="return confirm('Are you sure?')">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ jewels.id) }}">
             <button class="button">Delete</button>
@@ -28,5 +24,8 @@
       {% endfor %}
     </tbody>
   </table>
+  {% for message in app.flashes('success') %}
+  <div class="message">{{ message }}</div>
+  {% endfor %}
 </div>
 {% endblock %}
