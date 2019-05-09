@@ -25,7 +25,8 @@ class JewelryRepository extends ServiceEntityRepository
      */
     public function findBySale(): array
     {
-        return $this->findAllQuery()
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.sale = true')
             ->getQuery()
             ->getResult()
         ;
@@ -37,7 +38,7 @@ class JewelryRepository extends ServiceEntityRepository
     public function findLatest(): array
     {
         return $this->findAllQuery()
-            ->setMaxResults(4)
+            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
@@ -52,7 +53,6 @@ class JewelryRepository extends ServiceEntityRepository
             ->andWhere('j.category = :val')
             ->setParameter('val', $value)
             ->orderBy('j.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
