@@ -24,7 +24,7 @@ html{
 body {
   overflow-x: hidden;
   overflow-y: auto;
-  background: #fff;
+  background: hsl(211, 20%, 97%);
 	font: 20px/1.4 'FTN45__W', sans-serif;
 	font-weight: normal;
   color: #2d2d2d;
@@ -33,42 +33,45 @@ body {
 
 a { text-decoration: none }
 
+.title {
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.title span { font-size: 20px }
+
 main {
-  padding: 40px;
-  text-align: center;
+  padding: 50px 30px;
+  overflow: hidden;
 }
 
 nav {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   font-size: 0;
   text-align: center;
+  background: #2d2d2d;
 }
 
 nav a {
   display: block;
-  padding: 20px;
+  padding: 20px 30px;
   text-transform: uppercase;
-  font-family: 'FTN75__W', sans-serif;
+  /* font-family: 'FTN75__W', sans-serif; */
   font-size: 26px;
-  background: #2d2d2d;
   color: #fff;
 }
 
+/* nav a:hover { background: #fff } */
+
 nav a.active {
-  background: #fff;
+  background: hsl(211, 20%, 97%);
   color: #2d2d2d;
 }
 
-nav a:hover {
-  background: #d01345;
-}
-
-nav a.active:hover {
-  background: inherit;
-  color: inherit;
-}
+/* nav a.active:hover { background: hsl(211, 20%, 97%) } */
 
 .button {
   display: inline-block;
@@ -86,14 +89,49 @@ button.button {
 }
 
 .jewelry {
-  max-width: 900px;
   width: 100%;
-  margin: 40px auto;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0;
 }
 
 .jewelry strong { display: block }
 
 .jewelry span { display: block }
+
+.jewel {
+  width: 250px;
+  padding: 0 20px 20px 0;
+}
+
+.jewel-inside {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  color: #2d2d2d;
+}
+
+.jewel-title {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.jewel-price,
+.jewel-description {
+  display: block;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.jewel-reference {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+}
 
 .jewels {
   width: calc(100% /4);
@@ -101,12 +139,21 @@ button.button {
 }
 
 #admin {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
+  overflow: hidden;
+}
+
+#admin a {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
   background: #d01345;
   transform: rotate(45deg) translate(0px,-90px);
 }
@@ -144,7 +191,7 @@ button.button {
 .admin table button.button {
   display: inline-block;
   vertical-align: top;
-  padding: 10px 20px;
+  padding: 6px 16px;
   margin: 1px;
   font-size: 12px;
   background: #efefef;
