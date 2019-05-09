@@ -12,13 +12,15 @@
                 <a href="{{ path('jewelry.index') }}" class="{% if active_menu is defined and active_menu == 'jewelry' %}active{% endif %}">jewelry</a>
                 <a href="{{ path('client.necklaces.index') }}" class="{% if active_menu is defined and active_menu == 'necklaces' %}active{% endif %}">Necklaces</a>
                 <a href="{{ path('client.earrings.index') }}" class="{% if active_menu is defined and active_menu == 'earrings' %}active{% endif %}">earrings</a>
-                <a href="{{ path('client.rings.index') }}" class="{% if active_menu is defined and active_menu == 'rings' %}active{% endif %}">Rings</a>
+                <a href="{{ path('client.bracelets.index') }}" class="{% if active_menu is defined and active_menu == 'bracelets' %}active{% endif %}">Bracelets</a>
             </nav>
         </header>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
-        <a href="{{ path('admin.jewelry.index') }}" id="admin"></a>
+        <div id="admin">
+            <a href="{{ path('admin.jewelry.index') }}"></a>
+        </div>
     </body>
 </html>
