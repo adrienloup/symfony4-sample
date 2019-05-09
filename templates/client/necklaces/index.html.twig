@@ -2,15 +2,15 @@
 {% block title %}Necklaces and pendants (Jewelry){% endblock %}
 {% block body %}
 <main>
-  <h1>Necklaces and pendants</h1>
+  <h1 class="title">Necklaces and pendants</h1>
   <div class="jewelry">
-    {% for jewel in all %}
+    {% for jewel in necklaces %}
     <div class="jewel">
-      <h2><a href="{{ path('client.necklaces.single', { id: jewel.id, slug: jewel.slug }) }}">{{ jewel.name }}</a></h2>
-      <strong>{{ jewel.formattedPrice }} €</strong>
-      <span>ref {{ jewel.reference }}</span>
-      <span>{{ jewel.category }}</span>
-      <p>{{ jewel.description }}</p>
+      <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug }) }}" class="jewel-inside">
+        <h2 class="jewel-title">{{ jewel.name }} - {{ jewel.category }}</h2>
+        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <span class="jewel-reference">ref {{ jewel.reference }}</span>
+      </a>
     </div>
     {% endfor %}
   </div>
