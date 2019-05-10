@@ -2,12 +2,16 @@
 {% block title jewelry.name %}
 {% block body %}
 <main>
-  <h1>{{ jewelry.name }}</h1>
-  <div class="jewelry">
-    <strong>{{ jewelry.formattedPrice }} €</strong>
-    <span>ref {{ jewelry.reference }}</span>
-    <span>{{ jewelry.category }}</span>
-    <p>{{ jewelry.description }}</p>
+  <div class="columns">
+    <div class="column">
+      <span class="column-reference">ref {{ jewelry.formattedreference }}</span>
+    </div>
+    <div class="column">
+      <h1 class="column-title">{{ jewelry.name }}</h1>
+      <span class="column-category">{{ jewelry.category }}</span>
+      <strong class="column-price">{{ jewelry.formattedPrice }} €</strong>
+      <p class="column-description">{{ jewelry.description }}</p>
+    </div>
   </div>
 </main>
 {% endblock %}
