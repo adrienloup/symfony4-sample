@@ -40,23 +40,4 @@ class BraceletsController extends AbstractController
       'active_menu' => 'bracelets'
     ]);
   }
-
-  /**
-   * @Route("/jewelry/bracelets/{slug}-{id}", name="client.jewelry.single", requirements={"slug": "[a-z0-9\-]*"})
-   * @param Jewelry $jewelry
-   * @return Response
-   */
-  public function single(Jewelry $jewelry, string $slug): Response
-  {
-    if ($jewelry->getSlug() !== $slug ) {
-      return $this->redirectToRoute('client.jewelry.single', [
-        'id' => $jewelry->getId(),
-        'slug' => $jewelry->getSlug()
-      ], 301);
-    }
-    return $this->render('client/jewelry/single.html.twig', [
-      'jewelry' => $jewelry,
-      'active_menu' => 'bracelets'
-    ]);
-  }
 }

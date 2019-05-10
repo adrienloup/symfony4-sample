@@ -93,6 +93,11 @@ class Jewelry
         return $this;
     }
 
+    public function getFormattedReference(): string
+    {
+        return number_format($this->reference, 0, '', '-');
+    }
+
     public function getPrice(): ?int
     {
         return $this->price;

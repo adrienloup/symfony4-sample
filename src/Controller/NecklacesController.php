@@ -40,23 +40,4 @@ class NecklacesController extends AbstractController
       'active_menu' => 'necklaces'
     ]);
   }
-
-  /**
-   * @Route("/jewelry/necklaces/{slug}-{id}", name="client.jewelry.index", requirements={"slug": "[a-z0-9\-]*"})
-   * @param Jewelry $jewelry
-   * @return Response
-   */
-  public function single(Jewelry $jewelry, string $slug): Response
-  {
-    if ($jewelry->getSlug() !== $slug ) {
-      return $this->redirectToRoute('client.jewelry.index', [
-        'id' => $jewelry->getId(),
-        'slug' => $jewelry->getSlug()
-      ], 301);
-    }
-    return $this->render('client/jewelry/index.html.twig', [
-      'jewelry' => $jewelry,
-      'active_menu' => 'necklaces'
-    ]);
-  }
 }
