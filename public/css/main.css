@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background: hsl(211, 20%, 97%);
-	font: 20px/1.4 'FTN45__W', sans-serif;
+	font: 20px/1.1 'FTN45__W', sans-serif;
 	font-weight: normal;
   color: #2d2d2d;
   letter-spacing: 1px;
@@ -35,7 +35,7 @@ a { text-decoration: none }
 
 .title {
   font-weight: normal;
-  font-size: 40px;
+  font-size: 36px;
 }
 
 .title span { font-size: 20px }
@@ -66,7 +66,7 @@ a { text-decoration: none }
 }
 
 main {
-  padding: 50px 30px;
+  padding: 30px;
   overflow: hidden;
   position: relative;
 }
@@ -123,10 +123,6 @@ button.button {
   font-size: 0;
 }
 
-.jewelry strong { display: block }
-
-.jewelry span { display: block }
-
 .jewel {
   width: 250px;
   padding: 0 20px 20px 0;
@@ -142,26 +138,49 @@ button.button {
 .jewel-title {
   margin-bottom: 10px;
   font-weight: normal;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 20px;
 }
 
-.jewel-price,
-.jewel-description {
+.jewel-price {
   display: block;
-  font-weight: normal;
   font-size: 20px;
 }
 
 .jewel-reference {
   display: block;
+  margin-top: 10px;
   font-weight: normal;
   font-size: 12px;
 }
 
-.jewels {
+/* .jewels {
   width: calc(100% /4);
   text-align: left;
+} */
+
+.columns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  width: 50%;
+}
+
+.column-title,
+.column-price {
+  display: block;
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.column-category,
+.column-reference,
+.column-description {
+  display: block;
+  font-weight: normal;
+  font-size: 20px;
 }
 
 #admin {
@@ -181,14 +200,13 @@ button.button {
   top: 0;
   right: 0;
   background: #d01345;
-  transform: rotate(45deg) translate(0px,-90px);
+  transform: rotate(45deg) translate(0px,-100px);
 }
 
 .admin {
   max-width: 560px;
   width: calc(100% - 80px);
   margin: 0 auto;
-  padding: 40px;
   position: relative;
   z-index: 1;
 }
@@ -203,11 +221,6 @@ button.button {
   text-align: center;
 }
 
-.admin strong {
-  display: block;
-  margin-bottom: 10px;
-}
-
 .admin table { width: 100% }
 
 .admin table tr td:nth-child(2) {
@@ -219,10 +232,11 @@ button.button {
 .admin table button.button {
   display: inline-block;
   vertical-align: top;
-  padding: 6px 16px;
+  padding: 10px 16px;
   margin: 1px;
-  font-size: 12px;
-  background: #efefef;
+  line-height: 1;
+  font-size: 10px;
+  background: #e6e6e6;
   color: inherit;
 }
 
@@ -273,6 +287,10 @@ button.button {
   letter-spacing: 1px;
 }
 
-.admin form textarea { resize: vertical }
+.admin form textarea {
+  min-height: 53px;
+  height: auto;
+  resize: vertical;
+}
 
 .admin form input[type='checkbox'] { height: auto }
