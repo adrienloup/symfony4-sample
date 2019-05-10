@@ -3,8 +3,10 @@
 {% block title %}New (Admin){% endblock %}
 
 {% block body %}
-<div class="admin">
-  <h1>Add a new jewels</h1>
-  {{ include('admin/jewelry/_form.html.twig', {button: 'Add a new jewels'}) }}
-</div>
+<main>
+  <div class="admin">
+    <h1>Add a new jewels</h1>
+    {{ include('admin/jewelry/_form.html.twig', {button: 'Add a new jewels'}) }}
+  </div>
+</main>
 {% endblock %}
