@@ -7,8 +7,11 @@
     {% for jewel in lastest %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h3 class="jewel-title">{{ jewel.name }}</h3>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
@@ -18,8 +21,11 @@
     {% for jewel in sale %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h3 class="jewel-title">{{ jewel.name }}</h3>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
@@ -29,8 +35,11 @@
     {% for jewel in necklaces %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h2 class="jewel-title">{{ jewel.name }}</h2>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
@@ -40,8 +49,11 @@
     {% for jewel in earrings %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h2 class="jewel-title">{{ jewel.name }}</h2>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
@@ -51,8 +63,11 @@
     {% for jewel in bracelets %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h2 class="jewel-title">{{ jewel.name }}</h2>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
@@ -62,8 +77,11 @@
     {% for jewel in all %}
     <div class="jewel">
       <a href="{{ path('client.jewelry.single', { id: jewel.id, slug: jewel.slug, category: jewel.category|lower }) }}" class="jewel-inside">
-        <h3 class="jewel-title">{{ jewel.name }}</h3>
-        <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        <img class="jewel-image" src="http://picsum.photos/id/{{ jewel.image }}/467/467" alt="{{ jewel.name }}">
+        <div class="jewel-caption">
+          <h3 class="jewel-title">{{ jewel.name }}</h3>
+          <strong class="jewel-price">{{ jewel.formattedPrice }} €</strong>
+        </div>
       </a>
     </div>
     {% endfor %}
