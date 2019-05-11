@@ -130,9 +130,19 @@ button.button {
 
 .jewel-inside {
   display: block;
-  padding: 20px;
+  /* padding: 20px; */
   background: #fff;
   color: #2d2d2d;
+}
+
+.jewel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.jewel-caption {
+  padding: 20px;
 }
 
 .jewel-title {
