@@ -18,6 +18,7 @@ class JewelryType extends AbstractType
             ->add('price')
             ->add('sale')
             ->add('category')
+            ->add('image')
         ;
     }
 
