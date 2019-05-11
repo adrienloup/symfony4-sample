@@ -169,6 +169,7 @@ button.button {
 } */
 
 .columns {
+  max-width: 990px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -178,9 +179,14 @@ button.button {
   width: 50%;
 }
 
+.column:last-child {
+  padding-left: 30px;
+}
+
 .column-title,
 .column-price {
   display: block;
+  margin-bottom: 30px;
   font-weight: normal;
   font-size: 40px;
 }
