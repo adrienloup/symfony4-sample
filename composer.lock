@@ -2220,7 +2220,7 @@
                 "psr/log": "~1.0",
                 "psr/simple-cache": "^1.0",
                 "symfony/contracts": "^1.0",
-                "symfony/var-exporter": "4.2.12"
+                "symfony/var-exporter": "^4.2"
             },
             "conflict": {
                 "doctrine/dbal": "<2.5",
@@ -3123,7 +3123,7 @@
                 "symfony/event-dispatcher": "^4.1",
                 "symfony/filesystem": "~3.4|~4.0",
                 "symfony/finder": "~3.4|~4.0",
-                "symfony/http-foundation": "^4.2.5",
+                "symfony/http-foundation": "4.2.12",
                 "symfony/http-kernel": "^4.2",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/routing": "^4.2.8"
@@ -5097,7 +5097,7 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.2.12",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
