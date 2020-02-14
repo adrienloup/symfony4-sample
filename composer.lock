@@ -2202,7 +2202,7 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.2.8",
+            "version": "v4.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
@@ -2834,7 +2834,7 @@
             },
             "require": {
                 "php": "^7.1.3",
-                "symfony/cache": "~3.4|~4.0",
+                "symfony/cache": "4.2.12",
                 "symfony/contracts": "^1.0"
             },
             "type": "library",
@@ -3116,7 +3116,7 @@
             "require": {
                 "ext-xml": "*",
                 "php": "^7.1.3",
-                "symfony/cache": "~4.2",
+                "symfony/cache": "4.2.12",
                 "symfony/config": "~4.2",
                 "symfony/contracts": "^1.0.2",
                 "symfony/dependency-injection": "^4.2.5",
@@ -4009,7 +4009,7 @@
                 "symfony/inflector": "~3.4|~4.0"
             },
             "require-dev": {
-                "symfony/cache": "~3.4|~4.0"
+                "symfony/cache": "4.2.12"
             },
             "suggest": {
                 "psr/cache-implementation": "To cache access methods."
@@ -4083,7 +4083,7 @@
             "require-dev": {
                 "doctrine/annotations": "~1.0",
                 "phpdocumentor/reflection-docblock": "^3.0|^4.0",
-                "symfony/cache": "~3.4|~4.0",
+                "symfony/cache": "4.2.12",
                 "symfony/dependency-injection": "~3.4|~4.0",
                 "symfony/serializer": "~3.4|~4.0"
             },
@@ -4570,7 +4570,7 @@
                 "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.0",
                 "phpdocumentor/reflection-docblock": "^3.0|^4.0",
-                "symfony/cache": "~3.4|~4.0",
+                "symfony/cache": "4.2.12",
                 "symfony/config": "~3.4|~4.0",
                 "symfony/dependency-injection": "~3.4|~4.0",
                 "symfony/http-foundation": "4.2.12",
@@ -5038,7 +5038,7 @@
                 "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.0",
                 "egulias/email-validator": "^1.2.8|~2.0",
-                "symfony/cache": "~3.4|~4.0",
+                "symfony/cache": "4.2.12",
                 "symfony/config": "~3.4|~4.0",
                 "symfony/dependency-injection": "~3.4|~4.0",
                 "symfony/expression-language": "~3.4|~4.0",
